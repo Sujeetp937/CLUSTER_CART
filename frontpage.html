@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+      
+      <title>CLUSTER_CART</title>
+      <link rel="icon" type="image/svg+xml" href="cart-icon.svg">
+
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+      
+      <!-- {headerScripts} -->
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+      <!-- Base Styles -->
+      <style>
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="331e844d-b3e5-4705-a073-b9194623df1f" data-section-id="331e844d-b3e5-4705-a073-b9194623df1f">
+
+<htmlCode>
+<div id="root">
+  <nav id="navbar" class="fixed w-full z-50 bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#hero" class="text-xl font-bold animate__animated animate__fadeIn">ClusterCart</a>
+        </div>
+        
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-center space-x-4">
+            <a href="#features" class="hover:text-violet-400 px-3 py-2 rounded-md">Features</a>
+            <a href="#howitworks" class="hover:text-violet-400 px-3 py-2 rounded-md">How It Works</a>
+            <a href="#recommendations" class="hover:text-violet-400 px-3 py-2 rounded-md">Recommendations</a>
+            <a href="#testimonials" class="hover:text-violet-400 px-3 py-2 rounded-md">Testimonials</a>
+            <a href="#signup" class="bg-violet-600 hover:bg-violet-700 px-4 py-2 rounded-md">Sign Up</a>
+            <a href="signin_page.html" class="bg-violet-600 hover:bg-violet-700 px-4 py-2 rounded-md">Sign in</a>
+          </div>
+        </div>
+        
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:text-violet-400 focus:outline-none">
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral-800">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#features" class="block px-3 py-2 rounded-md hover:text-violet-400">Features</a>
+        <a href="#howitworks" class="block px-3 py-2 rounded-md hover:text-violet-400">How It Works</a>
+        <a href="#recommendations" class="block px-3 py-2 rounded-md hover:text-violet-400">Recommendations</a>
+        <a href="#testimonials" class="block px-3 py-2 rounded-md hover:text-violet-400">Testimonials</a>
+        <a href="#signup" class="block px-3 py-2 rounded-md bg-violet-600 hover:bg-violet-700 text-center">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      const isMenuHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isMenuHidden);
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu.getElementsByTagName('a');
+    Array.from(mobileLinks).forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</div>
+</htmlCode></element><element id="d73ddd95-4a1b-4203-8e27-e688c2e262b0" data-section-id="d73ddd95-4a1b-4203-8e27-e688c2e262b0">
+
+<htmlCode>
+<div id="root">
+  <section id="hero" class="bg-neutral-900 min-h-[70vh] pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-16">
+        <div class="flex flex-col justify-center">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate__animated animate__fadeInLeft">
+            Smart Shopping with <span class="text-violet-500">AI-Powered</span> Recommendations
+          </h1>
+          <p class="text-lg text-gray-300 mb-8 animate__animated animate__fadeInLeft animate__delay-1s">
+            Discover products tailored to your lifestyle with our advanced AI clustering technology. Get personalized recommendations based on your preferences and shopping patterns.
+          </p>
+          <div class="flex flex-wrap gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#signup" class="px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-lg font-semibold transition duration-300">
+              Get Started
+            </a>
+            <a href="#howitworks" class="px-8 py-4 border border-violet-500 text-violet-400 hover:bg-violet-500 hover:text-white rounded-lg font-semibold transition duration-300">
+              Learn More
+            </a>
+          </div>
+        </div>
+        
+        <div class="flex items-center justify-center animate__animated animate__fadeInRight">
+          <div class="relative w-full max-w-lg">
+            <div class="absolute top-0 -left-4 w-72 h-72 bg-violet-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            <div class="relative">
+              <div class="p-8 bg-neutral-800 rounded-2xl shadow-xl">
+                <div class="relative z-10 text-white space-y-6">
+                  <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold">AI-Powered Analysis</h3>
+                  </div>
+                  <div class="space-y-2">
+                    <div class="w-full h-3 bg-neutral-700 rounded-full overflow-hidden">
+                      <div class="w-3/4 h-full bg-violet-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-full h-3 bg-neutral-700 rounded-full overflow-hidden">
+                      <div class="w-2/3 h-full bg-blue-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="w-full h-3 bg-neutral-700 rounded-full overflow-hidden">
+                      <div class="w-1/2 h-full bg-pink-500 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
+</div>
+</htmlCode></element><element id="c8d79fb1-2bc9-47e2-bd87-a11d7ab28afd" data-section-id="c8d79fb1-2bc9-47e2-bd87-a11d7ab28afd">
+
+<htmlCode>
+<div id="root">
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate__animated animate__fadeIn">
+          Smart Features for Smarter Shopping
+        </h2>
+        <p class="text-lg text-gray-600 animate__animated animate__fadeIn animate__delay-1s">
+          Experience the power of AI-driven personalization
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Based Recommendations</h3>
+          <p class="text-gray-600">Advanced machine learning algorithms analyze your preferences to suggest products you'll love.</p>
+        </div>
+
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Smart Clustering</h3>
+          <p class="text-gray-600">K-Means clustering groups users with similar shopping patterns for accurate recommendations.</p>
+        </div>
+
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Easy Integration</h3>
+          <p class="text-gray-600">Seamlessly connect with popular e-commerce platforms like Amazon and Flipkart.</p>
+        </div>
+
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Data Security</h3>
+          <p class="text-gray-600">Your personal information is encrypted and protected with industry-standard security.</p>
+        </div>
+
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Real-time Updates</h3>
+          <p class="text-gray-600">Get instant product recommendations as your preferences evolve over time.</p>
+        </div>
+
+        <div class="p-6 bg-neutral-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="w-14 h-14 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Customizable Experience</h3>
+          <p class="text-gray-600">Adjust your preferences and fine-tune recommendations to match your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="a62efede-4415-45cb-903a-cbbf18021a26" data-section-id="a62efede-4415-45cb-903a-cbbf18021a26">
+
+<htmlCode>
+<div id="root">
+  <section id="howitworks" class="py-20 bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 animate__animated animate__fadeIn">
+          How ClusterCart Works
+        </h2>
+        <p class="text-lg text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
+          Get personalized recommendations in just a few simple steps
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- Step 1 -->
+        <div class="relative p-6 bg-neutral-800 rounded-xl animate__animated animate__fadeInUp">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+          <div class="mt-4">
+            <h3 class="text-xl font-semibold mb-3">Sign Up</h3>
+            <p class="text-gray-300">Create your account to get started with personalized recommendations</p>
+          </div>
+          <div class="absolute top-1/2 left-full hidden md:block">
+            <div class="w-12 h-0.5 bg-violet-600 transform translate-x-0"></div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative p-6 bg-neutral-800 rounded-xl animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+          <div class="mt-4">
+            <h3 class="text-xl font-semibold mb-3">Fill Details</h3>
+            <p class="text-gray-300">Provide your preferences and shopping patterns</p>
+          </div>
+          <div class="absolute top-1/2 left-full hidden md:block">
+            <div class="w-12 h-0.5 bg-violet-600 transform translate-x-0"></div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative p-6 bg-neutral-800 rounded-xl animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+          <div class="mt-4">
+            <h3 class="text-xl font-semibold mb-3">AI Analysis</h3>
+            <p class="text-gray-300">Our AI clusters you with similar shoppers</p>
+          </div>
+          <div class="absolute top-1/2 left-full hidden md:block">
+            <div class="w-12 h-0.5 bg-violet-600 transform translate-x-0"></div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative p-6 bg-neutral-800 rounded-xl animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+          <div class="mt-4">
+            <h3 class="text-xl font-semibold mb-3">Get Recommendations</h3>
+            <p class="text-gray-300">Receive personalized product suggestions</p>
+          </div>
+          <div class="absolute top-1/2 left-full hidden md:block">
+            <div class="w-12 h-0.5 bg-violet-600 transform translate-x-0"></div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="relative p-6 bg-neutral-800 rounded-xl animate__animated animate__fadeInUp animate__delay-4s">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-2xl font-bold">5</div>
+          <div class="mt-4">
+            <h3 class="text-xl font-semibold mb-3">Shop & Save</h3>
+            <p class="text-gray-300">Buy from your favorite e-commerce platforms</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#signup" class="inline-block px-8 py-4 bg-violet-600 hover:bg-violet-700 rounded-lg font-semibold transition duration-300 animate__animated animate__fadeInUp animate__delay-5s">
+          Get Started Now
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="c71debea-9113-41ee-b5b3-733278169e56" data-section-id="c71debea-9113-41ee-b5b3-733278169e56">
+
+
+                <htmlcode id="el-iighyjlu">
+<div id="root">
+  <section id="signup" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-vssn3f9d">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12" id="el-om5w3b5x">
+        <div class="animate__animated animate__fadeInLeft" id="el-d26iw2yl">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" id="el-t339t67q">
+            Start Your Personalized Shopping Journey
+          </h2>
+          <p class="text-lg text-gray-600 mb-8" id="el-6u1brkxh">
+            Join ClusterCart to discover products that match your unique preferences and shopping style.
+          </p>
+          <div class="space-y-6 bg-neutral-50 p-8 rounded-xl shadow-lg" id="el-9och4tcw">
+            <h3 class="text-xl font-semibold text-gray-900" id="el-rovl507r">What you'll get:</h3>
+            <div class="space-y-4" id="el-eyb3k15b">
+              <div class="flex items-center space-x-3" id="el-1wyg4gaw">
+                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-c255u747">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-uymp6v0f"></path>
+                </svg>
+                <span class="text-gray-700" id="el-ld3s1nn5">Personalized product recommendations</span>
+              </div>
+              <div class="flex items-center space-x-3" id="el-q46v3ca4">
+                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-3l50t6fx">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-avdua777"></path>
+                </svg>
+                <span class="text-gray-700" id="el-0zwxrhce">AI-driven shopping suggestions</span>
+              </div>
+              <div class="flex items-center space-x-3" id="el-cpcsxx6c">
+                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="el-bonevyll">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" id="el-vsaw1k2z"></path>
+                </svg>
+                <span class="text-gray-700" id="el-i1nz2nhp">Best deals across multiple platforms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg animate__animated animate__fadeInRight" id="el-pfenueek">
+  <form id="signupForm" class="space-y-6">
+    <div id="el-at0zcgqm">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-n1ptajgf">Full Name</label>
+      <input type="text" required="" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-nwo2x23z">
+    </div>
+    
+    <div id="el-5kg5frds">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-fonuk5hg">Email</label>
+      <input type="email" required="" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-zd6ll6kh">
+    </div>
+
+    <div id="el-tqiuvcq3">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-xlneqhb8">Age</label>
+      <input type="number" required="" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-3vzmuulh">
+    </div>
+    <div id="el-gender">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-gender-label">Gender</label>
+      <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-gender-select">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    
+    <div id="el-location">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-location-label">Location</label>
+      <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-location-select">
+        <option value="">Select Location</option>
+        <option value="Kentucky">Kentucky</option>
+        <option value="Maine">Maine</option>
+        <option value="Massachusetts">Massachusetts</option>
+        <option value="Rhode Island">Rhode Island</option>
+        <option value="Oregon">Oregon</option>
+        <option value="Wyoming">Wyoming</option>
+        <option value="Montana">Montana</option>
+        <option value="Louisiana">Louisiana</option>
+        <option value="West Virginia">West Virginia</option>
+        <option value="Missouri">Missouri</option>
+        <option value="Arkansas">Arkansas</option>
+        <option value="Hawaii">Hawaii</option>
+        <option value="Delaware">Delaware</option>
+        <option value="New Hampshire">New Hampshire</option>
+        <option value="New York">New York</option>
+        <option value="Alabama">Alabama</option>
+        <option value="Mississippi">Mississippi</option>
+        <option value="North Carolina">North Carolina</option>
+        <option value="California">California</option>
+        <option value="Oklahoma">Oklahoma</option>
+        <option value="Florida">Florida</option>
+        <option value="Texas">Texas</option>
+        <option value="Nevada">Nevada</option>
+        <option value="Kansas">Kansas</option>
+        <option value="Colorado">Colorado</option>
+        <option value="North Dakota">North Dakota</option>
+        <option value="Illinois">Illinois</option>
+        <option value="Indiana">Indiana</option>
+        <option value="Arizona">Arizona</option>
+        <option value="Alaska">Alaska</option>
+        <option value="Tennessee">Tennessee</option>
+        <option value="Ohio">Ohio</option>
+        <option value="New Jersey">New Jersey</option>
+        <option value="Maryland">Maryland</option>
+        <option value="Vermont">Vermont</option>
+        <option value="New Mexico">New Mexico</option>
+        <option value="South Carolina">South Carolina</option>
+        <option value="Idaho">Idaho</option>
+        <option value="Pennsylvania">Pennsylvania</option>
+        <option value="Connecticut">Connecticut</option>
+        <option value="Utah">Utah</option>
+        <option value="Virginia">Virginia</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Nebraska">Nebraska</option>
+        <option value="Iowa">Iowa</option>
+        <option value="South Dakota">South Dakota</option>
+        <option value="Minnesota">Minnesota</option>
+        <option value="Washington">Washington</option>
+        <option value="Wisconsin">Wisconsin</option>
+        <option value="Michigan">Michigan</option>
+      </select>
+    </div>
+    
+    <div id="el-rbd5gfd9">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-o44gg8gi">Shopping Frequency</label>
+      <select required="" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-pzy72gju">
+        <option value="" id="el-e0u5mfmf">Select frequency</option>
+        <option value="weekly" id="el-zxk324n4">Weekly</option>
+        <option value="bi-weekly" id="el-biwkrf7">Bi-Weekly</option>
+        <option value="fortnightly" id="el-ftnlt45">Fortnightly</option>
+        <option value="monthly" id="el-j0rfyhkb">Monthly</option>
+        <option value="quarterly" id="el-79fvtc5z">Quarterly</option>
+        <option value="every-3-months" id="el-e3m4t7">Every 3 Months</option>
+        <option value="annually" id="el-ann4576">Annually</option>
+      </select>
+    </div>
+    
+
+    <div id="el-income" class="relative">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-income-label">Annual Income</label>
+      <div class="relative w-full">
+        <span class="absolute inset-y-0 left-3 flex items-center text-gray-500">$</span>
+        <input type="number" required class="w-full pl-7 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-income-input" min="0" step="1" placeholder="Enter amount">
+      </div>
+    </div>
+
+    <div id="el-mj0jxae8">
+      <label class="block text-sm font-medium text-gray-700 mb-2" id="el-wwen2a1v">Password</label>
+      <input type="password" required="" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet-600 focus:border-transparent" id="el-9vy94709">
+    </div>
+
+    <button type="submit" class="w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-4 rounded-lg transition duration-300" id="el-bfp1l3z1">
+      Create Account
+    </button>
+
+    <p class="text-center text-sm text-gray-600" id="el-79sjwd8j">
+      Already have an account?
+      <a href="signin_page.html" class="text-violet-600 hover:text-violet-700 font-semibold" id="el-winohktt">Sign in</a>
+    </p>
+  </form>
+</div>
+      </div>
+    </div>
+  </section>
+  <script>
+   document.getElementById('signupForm').addEventListener('submit', async function (e) {
+    e.preventDefault();  
+    console.log("✅ Form submitted");
+
+    let genderValue = document.getElementById('el-gender-select').value === 'male' ? 1 : 0;
+
+    let formData = {
+        full_name: document.getElementById('el-nwo2x23z').value,
+        email: document.getElementById('el-zd6ll6kh').value,
+        age: document.getElementById('el-3vzmuulh').value,
+        gender: genderValue,
+        location: document.getElementById('el-location-select').value,
+        shopping_frequency: document.getElementById('el-pzy72gju').value,
+        annual_income: document.getElementById('el-income-input').value,
+        password: document.getElementById('el-9vy94709').value
+    };
+
+    try {
+        console.log("📤 Sending data to backend...", formData);
+
+        let response = await fetch('http://127.0.0.1:5000/signup', {  
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        let result = await response.json();
+        console.log("🔄 Response received:", result);
+
+        if (response.ok) {
+            alert(result.message);  
+            console.log("✅ Signup successful! Redirecting...");
+            setTimeout(() => {
+    window.location.href = 'signin_page.html';
+}, 1500);
+
+
+        } else {
+            alert(result.error);
+            console.log("❌ Signup failed:", result.error);
+        }
+    } catch (error) {
+        console.error('⚠️ Error:', error);
+        alert('Something went wrong! Please try again.');
+    }
+});
+</script>
+
+</div>
+</htmlcode>
+              </element><element id="d835b802-04ee-4338-8e10-cf38e1dce5a6" data-section-id="d835b802-04ee-4338-8e10-cf38e1dce5a6">
+
+<htmlCode>
+<div id="root">
+  <section id="recommendations" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate__animated animate__fadeIn">
+          Smart Recommendations
+        </h2>
+        <p class="text-lg text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
+          Discover products tailored to your preferences
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Recommendation Card 1 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-violet-600 text-white px-3 py-1 rounded-full text-sm">Electronics</span>
+              <div class="flex items-center">
+                <span class="text-yellow-400">★★★★★</span>
+                <span class="text-gray-400 text-sm ml-2">4.9</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="h-2 bg-violet-600 rounded-full w-3/4 animate-pulse"></div>
+              <div class="h-2 bg-violet-500 rounded-full w-5/6 animate-pulse"></div>
+              <div class="h-2 bg-violet-400 rounded-full w-4/6 animate-pulse"></div>
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+              <span class="text-white font-semibold">$299.99</span>
+              <a href="#" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                View on Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendation Card 2 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-violet-600 text-white px-3 py-1 rounded-full text-sm">Fashion</span>
+              <div class="flex items-center">
+                <span class="text-yellow-400">★★★★☆</span>
+                <span class="text-gray-400 text-sm ml-2">4.2</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="h-2 bg-violet-600 rounded-full w-5/6 animate-pulse"></div>
+              <div class="h-2 bg-violet-500 rounded-full w-4/6 animate-pulse"></div>
+              <div class="h-2 bg-violet-400 rounded-full w-3/4 animate-pulse"></div>
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+              <span class="text-white font-semibold">$89.99</span>
+              <a href="#" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                View on Flipkart
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recommendation Card 3 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-violet-600 text-white px-3 py-1 rounded-full text-sm">Home</span>
+              <div class="flex items-center">
+                <span class="text-yellow-400">★★★★★</span>
+                <span class="text-gray-400 text-sm ml-2">4.7</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="h-2 bg-violet-600 rounded-full w-4/6 animate-pulse"></div>
+              <div class="h-2 bg-violet-500 rounded-full w-3/4 animate-pulse"></div>
+              <div class="h-2 bg-violet-400 rounded-full w-5/6 animate-pulse"></div>
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+              <span class="text-white font-semibold">$149.99</span>
+              <a href="#" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg transition duration-300">
+                View on Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button id="loadMore" class="bg-violet-600 hover:bg-violet-700 text-white font-semibold px-8 py-4 rounded-lg transition duration-300 animate__animated animate__fadeInUp">
+          Load More Recommendations
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('loadMore').addEventListener('click', function() {
+      // Add loading more recommendations functionality here
+      alert('Loading more recommendations...');
+    });
+  </script>
+</div>
+</htmlCode></element><element id="6d3fdb85-936d-4bf8-936d-43ed1849f485" data-section-id="6d3fdb85-936d-4bf8-936d-43ed1849f485">
+
+<htmlCode>
+<div id="root">
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate__animated animate__fadeIn">
+          What Our Users Say
+        </h2>
+        <p class="text-lg text-gray-600 animate__animated animate__fadeIn animate__delay-1s">
+          Discover how ClusterCart is transforming shopping experiences
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              S
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold text-gray-900">Sarah Johnson</h3>
+              <p class="text-sm text-gray-600">Regular Shopper</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <span class="text-yellow-400">★★★★★</span>
+          </div>
+          <p class="text-gray-700">
+            "The AI recommendations are spot-on! I've discovered so many products I love that I wouldn't have found otherwise. Amazing how well it understands my style!"
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              M
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold text-gray-900">Michael Chen</h3>
+              <p class="text-sm text-gray-600">Tech Enthusiast</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <span class="text-yellow-400">★★★★★</span>
+          </div>
+          <p class="text-gray-700">
+            "The clustering algorithm is impressive! It's like having a personal shopping assistant who really knows what I want. Saved me hours of browsing."
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              R
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold text-gray-900">Rachel Smith</h3>
+              <p class="text-sm text-gray-600">Fashion Blogger</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <span class="text-yellow-400">★★★★★</span>
+          </div>
+          <p class="text-gray-700">
+            "Finally, a platform that understands my style preferences! The recommendations are always trendy and perfectly matched to my taste."
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial Slider Controls -->
+      <div class="flex justify-center items-center space-x-4 mt-12">
+        <button class="w-3 h-3 rounded-full bg-violet-600"></button>
+        <button class="w-3 h-3 rounded-full bg-violet-300 hover:bg-violet-600 transition-colors"></button>
+        <button class="w-3 h-3 rounded-full bg-violet-300 hover:bg-violet-600 transition-colors"></button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Testimonial slider functionality can be added here
+    const sliderDots = document.querySelectorAll('#testimonials button');
+    sliderDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        sliderDots.forEach(d => d.classList.replace('bg-violet-600', 'bg-violet-300'));
+        dot.classList.replace('bg-violet-300', 'bg-violet-600');
+      });
+    });
+  </script>
+</div>
+</htmlCode></element><element id="1df8322c-275d-40c5-bb91-769d620fc9aa" data-section-id="1df8322c-275d-40c5-bb91-769d620fc9aa">
+
+<htmlCode>
+<div id="root">
+  <section id="faq" class="py-20 bg-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate__animated animate__fadeIn">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
+          Everything you need to know about ClusterCart
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden animate__animated animate__fadeInUp">
+          <button class="faq-toggle w-full px-6 py-4 text-left focus:outline-none flex justify-between items-center">
+            <span class="text-lg font-semibold text-white">How does the AI recommendation system work?</span>
+            <svg class="w-6 h-6 text-violet-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 text-gray-300">
+            Our AI system uses K-means clustering to group users with similar shopping patterns. Based on your profile and preferences, it suggests products that are popular among users in your cluster.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
+          <button class="faq-toggle w-full px-6 py-4 text-left focus:outline-none flex justify-between items-center">
+            <span class="text-lg font-semibold text-white">Is my personal information secure?</span>
+            <svg class="w-6 h-6 text-violet-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 text-gray-300">
+            Yes, we take data security seriously. All personal information is encrypted and stored securely. We never share your personal data with third parties without your consent.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-2s">
+          <button class="faq-toggle w-full px-6 py-4 text-left focus:outline-none flex justify-between items-center">
+            <span class="text-lg font-semibold text-white">How often are recommendations updated?</span>
+            <svg class="w-6 h-6 text-violet-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 text-gray-300">
+            Recommendations are updated in real-time as you interact with the platform. The AI system continuously learns from your preferences and shopping patterns.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-neutral-800 rounded-xl overflow-hidden animate__animated animate__fadeInUp animate__delay-3s">
+          <button class="faq-toggle w-full px-6 py-4 text-left focus:outline-none flex justify-between items-center">
+            <span class="text-lg font-semibold text-white">Can I purchase products directly through ClusterCart?</span>
+            <svg class="w-6 h-6 text-violet-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-4 text-gray-300">
+            ClusterCart redirects you to trusted e-commerce platforms like Amazon and Flipkart for actual purchases. We ensure you get the best deals across multiple platforms.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // FAQ Toggle Functionality
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const arrow = button.querySelector('svg');
+        
+        // Toggle content
+        content.classList.toggle('hidden');
+        
+        // Rotate arrow
+        if (content.classList.contains('hidden')) {
+          arrow.style.transform = 'rotate(0deg)';
+        } else {
+          arrow.style.transform = 'rotate(180deg)';
+        }
+        
+        // Close other FAQs
+        document.querySelectorAll('.faq-content').forEach(item => {
+          if (item !== content) {
+            item.classList.add('hidden');
+            item.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  </script>
+</div>
+</htmlCode></element><element id="2c6cc6d1-1487-4ae1-b515-bde4646cd1ef" data-section-id="2c6cc6d1-1487-4ae1-b515-bde4646cd1ef">
+
+<htmlCode>
+<div id="root">
+  <section id="privacy" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 animate__animated animate__fadeIn">
+          Privacy & Security
+        </h2>
+        <p class="text-lg text-gray-600 animate__animated animate__fadeIn animate__delay-1s">
+          Your data security is our top priority
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Security Feature 1 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp">
+          <div class="w-16 h-16 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Encryption</h3>
+          <p class="text-gray-600">
+            All your personal information is encrypted using industry-standard protocols. Your data is secure both in transit and at rest.
+          </p>
+        </div>
+
+        <!-- Security Feature 2 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="w-16 h-16 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Privacy Control</h3>
+          <p class="text-gray-600">
+            You have complete control over your data. Choose what to share and manage your privacy settings at any time.
+          </p>
+        </div>
+
+        <!-- Security Feature 3 -->
+        <div class="bg-neutral-50 p-8 rounded-xl shadow-lg transform hover:scale-105 transition duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="w-16 h-16 bg-violet-600 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Transparent Policies</h3>
+          <p class="text-gray-600">
+            Clear and comprehensive privacy policies that explain how we handle and protect your data.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 bg-neutral-50 p-8 rounded-xl shadow-lg animate__animated animate__fadeInUp animate__delay-3s">
+        <h3 class="text-xl font-semibold text-gray-900 mb-6">Our Commitment to Your Privacy</h3>
+        <div class="space-y-4 text-gray-600">
+          <p>✓ We never sell your personal data to third parties</p>
+          <p>✓ Your shopping patterns are analyzed anonymously</p>
+          <p>✓ You can request data deletion at any time</p>
+          <p>✓ Regular security audits and updates</p>
+        </div>
+        <div class="mt-8 flex justify-center">
+          <a href="#" class="text-violet-600 hover:text-violet-700 font-semibold flex items-center">
+            Read Full Privacy Policy
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="192af57b-fc78-4608-84fc-973aa2401c65" data-section-id="192af57b-fc78-4608-84fc-973aa2401c65">
+
+<htmlCode>
+<div id="root">
+  <footer id="footer" class="bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-bold mb-4">ClusterCart</h3>
+          <p class="text-gray-400">Smart shopping recommendations powered by AI technology.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-violet-500 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-violet-500 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-violet-500 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.623 3.872 10.328 9.092 11.63-.056-.162-.092-.35-.092-.583v-2.051h-1.508c-.821 0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.276-.243-.3-.644-.022-.933.433-.45 1.767-.514 2.71.386.588.562.845 1.213 1.57 1.213.724 0 1.124-.045 1.324-.127.134-.795.737-1.484 1.284-1.827-3.266-.366-5.187-1.814-5.187-4.593 0-1.063.45-2.053 1.19-2.858-.122-.309-.537-1.554.114-3.21 0 0 .972-.31 3.18 1.184.923-.256 1.91-.384 2.895-.384s1.972.128 2.895.384c2.208-1.494 3.18-1.184 3.18-1.184.651 1.656.236 2.901.114 3.21.741.805 1.19 1.795 1.19 2.858 0 2.779-1.921 4.227-5.187 4.593.645.398 1.223 1.192 1.223 2.406v3.154c0 .233-.036.421-.092.583C20.128 22.328 24 17.623 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#features" class="text-gray-400 hover:text-violet-500 transition-colors">Features</a></li>
+            <li><a href="#howitworks" class="text-gray-400 hover:text-violet-500 transition-colors">How It Works</a></li>
+            <li><a href="#signup" class="text-gray-400 hover:text-violet-500 transition-colors">Sign Up</a></li>
+            <li><a href="#recommendations" class="text-gray-400 hover:text-violet-500 transition-colors">Recommendations</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="#faq" class="text-gray-400 hover:text-violet-500 transition-colors">FAQ</a></li>
+            <li><a href="#privacy" class="text-gray-400 hover:text-violet-500 transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-violet-500 transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-violet-500 transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
+          <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and features.</p>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-lg bg-neutral-800 border border-neutral-700 focus:outline-none focus:border-violet-500 text-white">
+            <button type="submit" class="w-full px-4 py-2 bg-violet-600 hover:bg-violet-700 rounded-lg transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-neutral-800 text-center text-gray-400">
+        <p>&copy; 2024 ClusterCart. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</htmlCode></element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          
