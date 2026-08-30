@@ -227,13 +227,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📞 Contact
-
-If you have any questions or feedback, please reach out at:
-
-- Email: your.email@example.com
-- GitHub: [Your GitHub Username](https://github.com/yourusername)
-
 ---
 
 Made with ❤️ by Sujeet Pal
