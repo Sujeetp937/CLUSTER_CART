@@ -236,4 +236,4 @@ If you have any questions or feedback, please reach out at:
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Sujeet Pal
